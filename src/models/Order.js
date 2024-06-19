@@ -27,10 +27,25 @@ const Order = sequelize.define(
                 key: 'id'
             }
         },
+        fullname: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            defaultValue: ''
+        },
+        phone: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            defaultValue: ''
+        },
         status: {
             type: DataTypes.TINYINT,
             allowNull: false,
             defaultValue: 1
+        },
+        isCart: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         },
         address: {
             type: DataTypes.TEXT,

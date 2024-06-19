@@ -34,7 +34,8 @@ Product.hasMany(ProductImage, {
 })
 
 ProductItem.belongsTo(Product, {
-    foreignKey: 'productId'
+    foreignKey: 'productId',
+    as: 'product'
 })
 
 Product.hasMany(ProductItem, {
@@ -61,7 +62,8 @@ OrderDetail.belongsTo(Order, {
 })
 
 OrderDetail.belongsTo(ProductItem, {
-    foreignKey: 'productItemId'
+    foreignKey: 'productItemId',
+    as: 'product_items'
 })
 
 ProductItem.hasMany(OrderDetail, {
