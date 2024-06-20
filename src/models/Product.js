@@ -25,11 +25,13 @@ const Product = sequelize.define(
         },
         rating: {
             type: DataTypes.FLOAT,
-            allowNull: false
+            allowNull: false,
+            defaultValue: 0
         },
         sold: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            defaultValue: 0
         },
 
         categoryId: {

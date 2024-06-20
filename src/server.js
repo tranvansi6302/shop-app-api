@@ -1,6 +1,6 @@
 const express = require('express')
 const { connectToDatabase } = require('./configs/connect')
-
+const path = require('path')
 const cors = require('cors')
 const morgan = require('morgan')
 const productRouter = require('./routers/productRouter')
@@ -15,6 +15,9 @@ const port = 3000
 app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
+
+const uploadDirectory = path.join(__dirname, 'uploads')
+app.use('/uploads', express.static(uploadDirectory))
 
 // Database config
 require('./models/relationship')
